@@ -1,27 +1,31 @@
 import React from "react";
-import './styles.scss';
+import styles from './lista.module.scss';
+
 function Lista() {
-   const tarefas =[{
-    tarefa: 'React',  
-    tempo: '02:00:00'
-   }, {
-    tarefa: 'Javascript',
-    tempo: '01:00:00'
-   }, {
-    tarefa: 'Typescript',
-    tempo:'03:00:00'
-   }]
-  
-    return (
-    <aside className="listaTarefas">
+  const tarefas = [
+    {
+      tarefa: 'React',
+      tempo: '02:00:00'
+    },
+    {
+      tarefa: 'Javascript',
+      tempo: '01:00:00'
+    },
+    {
+      tarefa: 'Typescript',
+      tempo: '03:00:00'
+    }
+  ];
+
+  return (
+    <aside className={styles.listaTarefas}>
       <h2>Estudos do dia</h2>
       <ul>
         {tarefas.map((item, index) => (
-            
-            <li key={index} className="item">
-                <h3>{item.tarefa}</h3>
+          <li key={index} className={styles.item}>
+            <h3>{item.tarefa}</h3>
             <span>{item.tempo}</span>
-            </li>
+          </li>
         ))}
       </ul>
     </aside>
@@ -29,4 +33,3 @@ function Lista() {
 }
 
 export default Lista;
-export {};
